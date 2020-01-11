@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="HangFire" Version="1.7.8" />
     <PackageReference Include="Hangfire.MemoryStorage" Version="1.6.3" />
+    <PackageReference Include="MailKit" Version="2.4.1" />
   </ItemGroup>
 
 </Project>
