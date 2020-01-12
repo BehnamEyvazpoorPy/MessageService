@@ -21,7 +21,7 @@ namespace MessageService.Core
 		{
 			if (!_isRuning)
 			{
-				Hangfire.GlobalConfiguration.Configuration.UseMemoryStorage();
+
 				new BackgroundJobServer();
 			}
 		}

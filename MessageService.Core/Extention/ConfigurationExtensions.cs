@@ -4,23 +4,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Hangfire;
+using Hangfire.MemoryStorage;
 
 namespace MessageService.Core
 {
 	public static class ConfigurationExtensions
 	{
-		public static Configuration AddMailServer(this Configuration configuration, Action<MailServerConfiguration> func)
+		public static Configuration AddMailServer(this Configuration configuration, Action<MailServerConfiguration> action)
 		{
 			var emailConfig = new MailServerConfiguration();
-			func(emailConfig);
+			action(emailConfig);
 			configuration.Configurations.Add(Constants.DefaulMailServerConfigName, emailConfig);
 			return configuration;
 		}
 
-		public static Configuration AddMailServer(this Configuration configuration, string name, Action<MailServerConfiguration> func)
+		public static Configuration AddMailServer(this Configuration configuration, string name, Action<MailServerConfiguration> action)
 		{
 			var emailConfig = new MailServerConfiguration();
-			func(emailConfig);
+			action(emailConfig);
 			configuration.Configurations.Add(name, emailConfig);
 			return configuration;
 		}
@@ -37,6 +39,21 @@ namespace MessageService.Core
 			var consoleSubscriber = new ConsoleSubscriber();
 			MessageSenderService.EnqueueSubject.Subscribe(consoleSubscriber);
 			MessageSenderService.ExecuteSubject.Subscribe(consoleSubscriber);
+			return configuration;
+		}
+
+		public static Configuration HangfireConfig(this Configuration configuration, Action<HangfireConfiguration> action)
+		{
+			var hangfireConfig = new HangfireConfiguration();
+			action(hangfireConfig);
+			if (!string.IsNullOrEmpty(hangfireConfig.ConnectionString))
+				Hangfire.GlobalConfiguration.Configuration.UseMemoryStorage();
+			else
+				Hangfire.GlobalConfiguration.Configuration.UseSqlServerStorage(hangfireConfig.ConnectionString);
+
+			if (hangfireConfig.RetryCount != null)
+				GlobalJobFilters.Filters.Add(new AutomaticRetryAttribute { Attempts = hangfireConfig.RetryCount.Value });
+
 			return configuration;
 		}
 

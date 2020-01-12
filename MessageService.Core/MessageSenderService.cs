@@ -10,6 +10,7 @@ namespace MessageService.Core
 	{
 		public MessageSenderService()
 		{
+			//TODO: max degree of parallelism option
 			HangFireServer.Instance.Start();
 		}
 
