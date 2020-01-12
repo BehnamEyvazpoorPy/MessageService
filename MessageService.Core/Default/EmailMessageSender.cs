@@ -20,7 +20,7 @@ namespace MessageService.Core.Default
 				ActionTime = DateTime.Now,
 				Data = JsonConvert.SerializeObject(message),
 				MessageSenderType = typeof(EmailMessageSender),
-				MessageType = typeof(Email)
+				MessageType = typeof(Email),
 			};
 
 			try

@@ -60,7 +60,7 @@ namespace MessageService.Core
 				// Notify message has added to the send queue
 				var actionContext = new ActionContext
 				{
-					Action = "Enqueue message",
+					Action = "Message Enqueue",
 					ActionTime = DateTime.Now,
 					Data = JsonConvert.SerializeObject(message),
 					JobId = jobId,
@@ -69,6 +69,60 @@ namespace MessageService.Core
 				};
 				EnqueueSubject.Notify(actionContext);
 			}
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <typeparam name="TMessageSender"></typeparam>
+		/// <typeparam name="TMessage"></typeparam>
+		/// <param name="message"></param>
+		/// <param name="sendAt"></param>
+		public void Schedule<TMessageSender, TMessage>(TMessage message, DateTimeOffset sendAt) where TMessageSender : IMessageSender<TMessage>
+		{
+			var sender = Activator.CreateInstance<TMessageSender>();
+			var jobId = BackgroundJob.Schedule(() => sender.Send(message), sendAt);
+
+			// Notify message has added to the send queue
+			var actionContext = new ActionContext
+			{
+				Action = "Message Schedule",
+				ActionTime = DateTime.Now,
+				Data = JsonConvert.SerializeObject(message),
+				JobId = jobId,
+				MessageSenderType = typeof(TMessageSender),
+				MessageType = typeof(TMessage)
+			};
+			EnqueueSubject.Notify(actionContext);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <typeparam name="TMessageSender"></typeparam>
+		/// <typeparam name="TMessage"></typeparam>
+		/// <param name="message"></param>
+		/// <param name="sendAt"></param>
+		public void Schedule<TMessageSender, TMessage>(TMessage[] messages, DateTimeOffset sendAt) where TMessageSender : IMessageSender<TMessage>
+		{
+			var sender = Activator.CreateInstance<TMessageSender>();
+			foreach (var message in messages)
+			{
+				var jobId = BackgroundJob.Enqueue(() => sender.Send(message));
+
+				// Notify message has added to the send queue
+				var actionContext = new ActionContext
+				{
+					Action = "Message Schedule",
+					ActionTime = DateTime.Now,
+					Data = JsonConvert.SerializeObject(message),
+					JobId = jobId,
+					MessageSenderType = typeof(TMessageSender),
+					MessageType = typeof(TMessage)
+				};
+				EnqueueSubject.Notify(actionContext);
+			}
+
 		}
 	}
 }

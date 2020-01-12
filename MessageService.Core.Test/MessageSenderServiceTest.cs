@@ -39,5 +39,37 @@ namespace MessageService.Core.Test
 			Thread.Sleep(TimeSpan.FromSeconds(2));
 			Assert.AreEqual(testMessages.Length, TestMessage.TestMessages.Count);
 		}
+
+		[TestMethod]
+		public void ScheduleTestMessage()
+		{
+			var messageSenderService = new MessageSenderService();
+			var testMessage = new TestMessage
+			{
+				Title = "Test Message"
+			};
+			messageSenderService.Schedule<TestMessageSender, TestMessage>(testMessage, DateTimeOffset.Now.AddSeconds(-2));
+
+			Thread.Sleep(TimeSpan.FromSeconds(2));
+			Assert.AreEqual(1, TestMessage.TestMessages.Count);
+			Assert.AreEqual(testMessage.Title, TestMessage.TestMessages[0].Title);
+		}
+
+		[TestMethod]
+		public void ScheduleMessages()
+		{
+			var messageSenderService = new MessageSenderService();
+			var testMessages = new TestMessage[20];
+			for (int i = 0; i < testMessages.Length; i++)
+				testMessages[i] = new TestMessage
+				{
+					Title = $"Test message #{i}"
+				};
+
+			messageSenderService.Schedule<TestMessageSender, TestMessage>(testMessages, DateTimeOffset.Now.AddSeconds(-2));
+
+			Thread.Sleep(TimeSpan.FromSeconds(2));
+			Assert.AreEqual(testMessages.Length, TestMessage.TestMessages.Count);
+		}
 	}
 }

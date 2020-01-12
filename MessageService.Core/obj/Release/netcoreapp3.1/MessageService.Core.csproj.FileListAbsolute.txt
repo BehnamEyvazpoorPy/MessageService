@@ -1,0 +1,8 @@
+C:\Users\Behnam\source\repos\MailService\MessageService.Core\bin\Release\netcoreapp3.1\MessageService.Core.deps.json
+C:\Users\Behnam\source\repos\MailService\MessageService.Core\bin\Release\netcoreapp3.1\MessageService.Core.dll
+C:\Users\Behnam\source\repos\MailService\MessageService.Core\bin\Release\netcoreapp3.1\MessageService.Core.pdb
+C:\Users\Behnam\source\repos\MailService\MessageService.Core\obj\Release\netcoreapp3.1\MessageService.Core.csprojAssemblyReference.cache
+C:\Users\Behnam\source\repos\MailService\MessageService.Core\obj\Release\netcoreapp3.1\MessageService.Core.AssemblyInfoInputs.cache
+C:\Users\Behnam\source\repos\MailService\MessageService.Core\obj\Release\netcoreapp3.1\MessageService.Core.AssemblyInfo.cs
+C:\Users\Behnam\source\repos\MailService\MessageService.Core\obj\Release\netcoreapp3.1\MessageService.Core.dll
+C:\Users\Behnam\source\repos\MailService\MessageService.Core\obj\Release\netcoreapp3.1\MessageService.Core.pdb

@@ -9,15 +9,20 @@ namespace MessageService.Samples.Console
 		{
 			System.Console.WriteLine("The mail sender service has started...");
 
-			GlobalConfiguration.Configuration.AddMailServer(x => { 
-			
-			}).AddConsole();
+			GlobalConfiguration.Configuration.AddMailServer(x =>
+			{
+
+			}).AddConsole().HangfireConfig(x =>
+			{
+				x.RetryCount = 5;
+				x.ConnectionString = "Server=.;Initial catalog=MessageServiceTestDatabase;user id=sa;password=12345";
+			});
 
 			var messageSenderService = new MessageSenderService();
 
 			var email = new Email()
 			{
-				Subject="Test email"
+				Subject = "Test email"
 			};
 
 			messageSenderService.Send<EmailMessageSender, Email>(email);

@@ -54,7 +54,6 @@ namespace MessageService.Core.Test
 			Assert.AreEqual("Message Sent", actionContext.Action);
 			Assert.AreEqual(typeof(TestMessageSender), actionContext.MessageSenderType);
 			Assert.AreEqual(typeof(TestMessage), actionContext.MessageType);
-			Assert.AreEqual(null, actionContext.JobId);
 		}
 	}
 }
