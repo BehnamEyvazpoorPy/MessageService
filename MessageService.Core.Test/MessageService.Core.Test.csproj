@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MessageService.Core\MessageService.Core.csproj" />
-    <ProjectReference Include="..\MessageSevice.Core\MessageService.Core.csproj" />
   </ItemGroup>
 
 </Project>

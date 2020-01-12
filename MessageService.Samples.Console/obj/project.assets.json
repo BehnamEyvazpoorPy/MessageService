@@ -4249,9 +4249,6 @@
           "projectReferences": {
             "C:\\Users\\Behnam\\source\\repos\\MailService\\MessageService.Core\\MessageService.Core.csproj": {
               "projectPath": "C:\\Users\\Behnam\\source\\repos\\MailService\\MessageService.Core\\MessageService.Core.csproj"
-            },
-            "C:\\Users\\Behnam\\source\\repos\\MailService\\MessageSevice.Core\\MessageService.Core.csproj": {
-              "projectPath": "C:\\Users\\Behnam\\source\\repos\\MailService\\MessageSevice.Core\\MessageService.Core.csproj"
             }
           }
         }
