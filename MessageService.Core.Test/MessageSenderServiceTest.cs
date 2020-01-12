@@ -1,5 +1,4 @@
 ﻿using MessageService.Core.Test.TestObject;
-using MessageSevice.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading;
@@ -20,12 +19,13 @@ namespace MessageService.Core.Test
 			messageSenderService.Send<TestMessageSender, TestMessage>(testMessage);
 
 			Thread.Sleep(TimeSpan.FromSeconds(2));
-			Assert.AreEqual(TestMessage.TestMessages.Count, 1);
-			Assert.AreEqual(TestMessage.TestMessages[0].Title, testMessage.Title);
+			Assert.AreEqual(1, TestMessage.TestMessages.Count);
+			Assert.AreEqual(testMessage.Title, TestMessage.TestMessages[0].Title);
 		}
 
 		[TestMethod]
-		public void SendTestMessages() {
+		public void SendTestMessages()
+		{
 			var messageSenderService = new MessageSenderService();
 			var testMessages = new TestMessage[20];
 			for (int i = 0; i < testMessages.Length; i++)
@@ -37,7 +37,7 @@ namespace MessageService.Core.Test
 			messageSenderService.Send<TestMessageSender, TestMessage>(testMessages);
 
 			Thread.Sleep(TimeSpan.FromSeconds(2));
-			Assert.AreEqual(TestMessage.TestMessages.Count, testMessages.Length);
+			Assert.AreEqual(testMessages.Length, TestMessage.TestMessages.Count);
 		}
 	}
 }

@@ -1,8 +1,0 @@
-C:\Users\Behnam\source\repos\MailService\MessageSevice.Core\bin\Debug\netcoreapp3.1\MessageSevice.Core.deps.json
-C:\Users\Behnam\source\repos\MailService\MessageSevice.Core\bin\Debug\netcoreapp3.1\MessageSevice.Core.dll
-C:\Users\Behnam\source\repos\MailService\MessageSevice.Core\bin\Debug\netcoreapp3.1\MessageSevice.Core.pdb
-C:\Users\Behnam\source\repos\MailService\MessageSevice.Core\obj\Debug\netcoreapp3.1\MessageSevice.Core.AssemblyInfoInputs.cache
-C:\Users\Behnam\source\repos\MailService\MessageSevice.Core\obj\Debug\netcoreapp3.1\MessageSevice.Core.AssemblyInfo.cs
-C:\Users\Behnam\source\repos\MailService\MessageSevice.Core\obj\Debug\netcoreapp3.1\MessageSevice.Core.dll
-C:\Users\Behnam\source\repos\MailService\MessageSevice.Core\obj\Debug\netcoreapp3.1\MessageSevice.Core.pdb
-C:\Users\Behnam\source\repos\MailService\MessageSevice.Core\obj\Debug\netcoreapp3.1\MessageSevice.Core.csprojAssemblyReference.cache

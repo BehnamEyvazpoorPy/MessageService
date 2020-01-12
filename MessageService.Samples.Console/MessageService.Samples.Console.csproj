@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MessageService.Core\MessageService.Core.csproj" />
+    <ProjectReference Include="..\MessageSevice.Core\MessageService.Core.csproj" />
+  </ItemGroup>
+
+</Project>

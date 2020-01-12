@@ -2331,7 +2331,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "MessageSevice.Core/1.0.0": {
+      "MessageService.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -2340,10 +2340,10 @@
           "MailKit": "2.4.1"
         },
         "compile": {
-          "bin/placeholder/MessageSevice.Core.dll": {}
+          "bin/placeholder/MessageService.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessageSevice.Core.dll": {}
+          "bin/placeholder/MessageService.Core.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -7701,17 +7701,17 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "MessageSevice.Core/1.0.0": {
+    "MessageService.Core/1.0.0": {
       "type": "project",
-      "path": "../MessageSevice.Core/MessageSevice.Core.csproj",
-      "msbuildProject": "../MessageSevice.Core/MessageSevice.Core.csproj"
+      "path": "../MessageService.Core/MessageService.Core.csproj",
+      "msbuildProject": "../MessageService.Core/MessageService.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "MSTest.TestAdapter >= 2.0.0",
       "MSTest.TestFramework >= 2.0.0",
-      "MessageSevice.Core >= 1.0.0",
+      "MessageService.Core >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
       "coverlet.collector >= 1.0.1"
     ]
@@ -7746,8 +7746,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Behnam\\source\\repos\\MailService\\MessageSevice.Core\\MessageSevice.Core.csproj": {
-              "projectPath": "C:\\Users\\Behnam\\source\\repos\\MailService\\MessageSevice.Core\\MessageSevice.Core.csproj"
+            "C:\\Users\\Behnam\\source\\repos\\MailService\\MessageService.Core\\MessageService.Core.csproj": {
+              "projectPath": "C:\\Users\\Behnam\\source\\repos\\MailService\\MessageService.Core\\MessageService.Core.csproj"
+            },
+            "C:\\Users\\Behnam\\source\\repos\\MailService\\MessageSevice.Core\\MessageService.Core.csproj": {
+              "projectPath": "C:\\Users\\Behnam\\source\\repos\\MailService\\MessageSevice.Core\\MessageService.Core.csproj"
             }
           }
         }

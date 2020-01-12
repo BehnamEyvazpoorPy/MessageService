@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MessageSevice.Core;
-using MessageSevice.Core.Default;
-using MessageSevice.Core.MessageModel;
-using Microsoft.AspNetCore.Http;
+﻿using System.Threading.Tasks;
+using MessageService.Core;
+using MessageService.Core.Default;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MessageService.Web.API
@@ -21,9 +16,5 @@ namespace MessageService.Web.API
             _messageSenderService = messageSenderService;
         }
 
-        [HttpPost]
-        public async Task SendEmail(Email email) {
-            await _messageSenderService.Send<EmailMessageSender, Email>(email);
-        }
     }
 }

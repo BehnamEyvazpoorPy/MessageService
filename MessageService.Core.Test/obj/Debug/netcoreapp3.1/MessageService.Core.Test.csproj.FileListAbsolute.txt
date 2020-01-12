@@ -98,8 +98,6 @@ C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netc
 C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Data.SqlClient.dll
 C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.SqlClient.dll
-C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\MessageSevice.Core.dll
-C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\MessageSevice.Core.pdb
 C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\obj\Debug\netcoreapp3.1\MessageService.Core.Test.csprojAssemblyReference.cache
 C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\obj\Debug\netcoreapp3.1\MessageService.Core.Test.AssemblyInfoInputs.cache
 C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\obj\Debug\netcoreapp3.1\MessageService.Core.Test.AssemblyInfo.cs
@@ -107,3 +105,8 @@ C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\obj\Debug\netc
 C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\obj\Debug\netcoreapp3.1\MessageService.Core.Test.dll
 C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\obj\Debug\netcoreapp3.1\MessageService.Core.Test.pdb
 C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\Hangfire.MemoryStorage.dll
+C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\MessageService.Core.dll
+C:\Users\Behnam\source\repos\MailService\MessageService.Core.Test\bin\Debug\netcoreapp3.1\MessageService.Core.pdb
