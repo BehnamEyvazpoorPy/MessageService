@@ -2,6 +2,7 @@
 using Hangfire.MemoryStorage;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MessageService.Core
@@ -21,6 +22,8 @@ namespace MessageService.Core
 		{
 			if (!_isRuning)
 			{
+				if (!GlobalConfiguration.Configuration.Configurations.Keys.Contains("Hangfire"))
+					Hangfire.GlobalConfiguration.Configuration.UseMemoryStorage();
 
 				new BackgroundJobServer();
 			}

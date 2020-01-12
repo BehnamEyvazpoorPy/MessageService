@@ -44,12 +44,14 @@ namespace MessageService.Core
 
 		public static Configuration HangfireConfig(this Configuration configuration, Action<HangfireConfiguration> action)
 		{
+
 			var hangfireConfig = new HangfireConfiguration();
 			action(hangfireConfig);
+			GlobalConfiguration.Configuration.Configurations.TryAdd("Hangfire", configuration);
 			if (!string.IsNullOrEmpty(hangfireConfig.ConnectionString))
-				Hangfire.GlobalConfiguration.Configuration.UseMemoryStorage();
-			else
 				Hangfire.GlobalConfiguration.Configuration.UseSqlServerStorage(hangfireConfig.ConnectionString);
+			else
+				Hangfire.GlobalConfiguration.Configuration.UseMemoryStorage();
 
 			if (hangfireConfig.RetryCount != null)
 				GlobalJobFilters.Filters.Add(new AutomaticRetryAttribute { Attempts = hangfireConfig.RetryCount.Value });
